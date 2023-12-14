@@ -1,0 +1,23 @@
+<!-- update_product.tpl -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Product</title>
+</head>
+<body>
+    <h1>Update Product</h1>
+    <form action="/products/{{ product['id'] }}/update" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ product['name'] }}" required><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" value="{{ product['price'] }}" required><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="{{ product['quantity'] }}" required><br>
+
+        <input type="submit" value="Update Product">
+    </form>
+    <a href="/products/{{ product['id'] }}">Back to Product Details</a>
+</body>
+</html>
